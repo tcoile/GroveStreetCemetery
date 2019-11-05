@@ -2,6 +2,7 @@
   <div id="app">
     <Map v-if="!pageType"></Map>
     <Info v-if="pageType"></Info>
+    <p>technically changed</p>
     <button @click="changePage()">Next</button> 
   </div>
 </template>
