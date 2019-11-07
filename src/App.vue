@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Map v-if="!pageType"></Map>
+    <Info v-if="pageType"></Info>
+    <p>technically changed</p>
+    <button @click="changePage()">Next</button> 
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Map from './components/Map.vue'
+import Info from './components/Info.vue'
 
 export default {
   name: 'app',
+  data: () => ({
+    pageType: 0
+  }),
   components: {
-    HelloWorld
+    Map, 
+    Info
+  }, 
+  methods: {
+    changePage: function() {
+      this.pageType = !this.pageType;
+    }
   }
 }
 </script>
