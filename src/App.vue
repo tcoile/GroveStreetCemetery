@@ -4,20 +4,24 @@
     <Info v-if="pageType"></Info>
     <p>technically changed</p>
     <button @click="changePage()">Next</button> 
+    <imageCheck :whichMarker="whichMarker"></imageCheck>
   </div>
 </template>
 
 <script>
 import Map from './components/Map.vue'
+import imageCheck from './components/imageCheck.vue'
 import Info from './components/Info.vue'
 
 export default {
   name: 'app',
   data: () => ({
-    pageType: 0
+    pageType: 0,
+    whichMarker: 0
   }),
   components: {
     Map, 
+    imageCheck,
     Info
   }, 
   methods: {
