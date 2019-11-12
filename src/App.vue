@@ -1,13 +1,16 @@
 <template>
   <div id="app">
+    <whichPage/>
     <Map v-if="!pageType"></Map>
     <Info v-if="pageType"></Info>
     <p>technically changed</p>
     <button @click="changePage()">Next</button> 
+
   </div>
 </template>
 
 <script>
+import whichPage from './components/whichPage.vue'
 import Map from './components/Map.vue'
 import Info from './components/Info.vue'
 
@@ -17,6 +20,7 @@ export default {
     pageType: 0
   }),
   components: {
+    whichPage,
     Map, 
     Info
   }, 
