@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>Marker #{{marker}}</h2>
+    <whichMarker/>
     <Map v-if="page==0"></Map>
     <imageCheck v-if="page==1"></imageCheck>
     <Info v-if="page==2"></Info>
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import whichMarker from './components/whichMarker.vue'
 import whichPage from './components/whichPage.vue'
 import Map from './components/Map.vue'
 import imageCheck from './components/imageCheck.vue'
@@ -20,6 +21,7 @@ export default {
   }),
 
   components: {
+    whichMarker,
     whichPage,
     Map, 
     imageCheck,

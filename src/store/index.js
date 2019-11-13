@@ -16,6 +16,9 @@ export const store = new Vuex.Store({
     },
     incrementMarker (state, payload) {
       state.marker = (state.marker + payload) % 5
+    },
+    setMarker (state, payload) {
+      state.marker = payload
     }
   },
 
@@ -25,6 +28,9 @@ export const store = new Vuex.Store({
     },
     incrementActionMarker ({commit}, payload) {
       commit('incrementMarker', payload)
+    },
+    setActionMarker ({commit}, payload) {
+      commit('setMarker', payload)
     }
   },
 

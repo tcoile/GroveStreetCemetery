@@ -1,6 +1,7 @@
 <template>
   <div class="container p-3">
-    <b-img thumbnail :src="'marker' + marker + '.jpg'"></b-img>
+    <h2>Do you see this place?</h2>
+    <b-img thumbnail :src="'marker/' + marker + '.jpg'"></b-img>
   </div>
 </template>
 
