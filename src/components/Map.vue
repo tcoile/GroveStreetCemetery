@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p>Map Goes Here</p>
     <!--Grid row-->
     <div class="row">
 

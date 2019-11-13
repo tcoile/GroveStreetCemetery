@@ -1,32 +1,41 @@
 <template>
   <div id="app">
+    <h2>Marker #{{marker}}</h2>
+    <Map v-if="page==0"></Map>
+    <imageCheck v-if="page==1"></imageCheck>
+    <Info v-if="page==2"></Info>
     <whichPage/>
-    <Map v-if="!pageType"></Map>
-    <Info v-if="pageType"></Info>
-    <p>technically changed</p>
-    <button @click="changePage()">Next</button> 
-
   </div>
 </template>
 
 <script>
 import whichPage from './components/whichPage.vue'
 import Map from './components/Map.vue'
+import imageCheck from './components/imageCheck.vue'
 import Info from './components/Info.vue'
 
 export default {
   name: 'app',
   data: () => ({
-    pageType: 0
   }),
+
   components: {
     whichPage,
     Map, 
+    imageCheck,
     Info
   }, 
+
   methods: {
-    changePage: function() {
-      this.pageType = !this.pageType;
+  },
+
+  computed: {
+    page () {
+      return this.$store.getters.page
+    },
+
+    marker () {
+      return this.$store.getters.marker
     }
   }
 }

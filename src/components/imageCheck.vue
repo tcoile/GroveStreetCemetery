@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <b-btn v-if="page != 2" @click="incrementPage">Next</b-btn>
-  
+  <div class="container p-3">
+    <b-img thumbnail :src="'marker' + marker + '.jpg'"></b-img>
   </div>
 </template>
 
@@ -15,6 +14,9 @@
     computed: {
       page () {
         return this.$store.getters.page
+      },
+      marker () {
+        return this.$store.getters.marker
       }
     }
   }

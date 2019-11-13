@@ -6,24 +6,34 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
 
   state: {
-    count: 0
+    page: 0,
+    marker: 0
   },
 
   mutations: {
-    incrementCounter (state, payload) {
-      state.count += payload
+    incrementPage (state, payload) {
+      state.page = (state.page + payload) % 3
+    },
+    incrementMarker (state, payload) {
+      state.marker = (state.marker + payload) % 5
     }
   },
 
   actions: {
-    incrementAction ({commit}, payload) {
-      commit('incrementCounter', payload)
+    incrementActionPage ({commit}, payload) {
+      commit('incrementPage', payload)
+    },
+    incrementActionMarker ({commit}, payload) {
+      commit('incrementMarker', payload)
     }
   },
 
   getters: {
-    counter (state) {
-      return state.count
+    page (state) {
+      return state.page
+    },
+    marker (state) {
+     return state.marker
     }
   }
 })
