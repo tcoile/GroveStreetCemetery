@@ -8,7 +8,7 @@
     >
     <template slot-scope="scopeProps"> <!-- slot-scope -->
         <child-marker 
-          v-for="(marker,i) in markers"
+          v-for="(marker,i) in currMarkers"
           :key="i"
           :position="marker" 
           :google="scopeProps.google"
@@ -24,11 +24,15 @@ import MapLoader from "./MapLoader.vue"
 import ChildMarker from './ChildMarker'
 
 export default {
-  props: {
-    markers: Array
-  },
   data(){
     return {
+      markers: [
+        {"lat": 41.312735,"lng": -72.926955},
+        {"lat":41.315017 ,"lng": -72.927987},
+        {"lat":41.314543,"lng": -72.927736},
+        {"lat":41.314707,"lng": -72.926505},
+      ],
+      currMarkers: [],
       mapConfig: {
         zoom: 18,
         center: {lat: 41.314001, lng: -72.927009}
@@ -39,6 +43,15 @@ export default {
   components: {
     MapLoader,
     ChildMarker
+  }, 
+  methods: {
+    displayMarker: function(markerNumber) {
+      this.currMarkers = [];
+      this.currMarkers.push(this.markers[markerNumber]);
+    }
+  }, 
+  mounted() {
+    this.displayMarker(this.$store.getters.marker);
   }
 }
 </script>

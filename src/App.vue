@@ -1,12 +1,7 @@
 <template>
   <div id="app">
     <whichMarker/>
-    <my-map v-if="page==0" :markers='[
-        {"lat": 41.312735,"lng": -72.926955},
-        {"lat":41.315017 ,"lng": -72.927987},
-        {"lat":41.314707,"lng": -72.926505},
-        {"lat":41.314543,"lng": -72.927736},
-      ]'>
+    <my-map v-if="page==0">
     </my-map>
     <imageCheck v-if="page==1"></imageCheck>
     <Info v-if="page==2"></Info>
