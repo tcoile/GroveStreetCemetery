@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <Map v-if="!pageType"></Map>
+    <my-map :markers='[
+        {"lat": 41.312735,"lng": -72.926955},
+        {"lat":41.315017 ,"lng": -72.927987},
+        {"lat":41.314707,"lng": -72.926505},
+        {"lat":41.314543,"lng": -72.927736},
+      ]'>
+    </my-map>
+
     <Info v-if="pageType"></Info>
     <p>technically changed</p>
     <button @click="changePage()">Next</button> 
@@ -8,7 +15,7 @@
 </template>
 
 <script>
-import Map from './components/Map.vue'
+import MyMap from './components/MyMap.vue'
 import Info from './components/Info.vue'
 
 export default {
@@ -17,7 +24,7 @@ export default {
     pageType: 0
   }),
   components: {
-    Map, 
+    MyMap, 
     Info
   }, 
   methods: {

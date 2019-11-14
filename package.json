@@ -10,6 +10,7 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.4",
     "core-js": "^3.3.2",
+    "google-maps-api-loader": "^1.1.1",
     "vue": "^2.6.10",
     "vue-cli": "^2.9.6"
   },

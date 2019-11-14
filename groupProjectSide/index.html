@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 41.314001, lng: -72.927009},
+          zoom: 18,
+          mapTypeId: 'satellite'
+        });
+        var entryPosition = {lat:41.312735,lng:-72.926955};
+	    var marker = new google.maps.Marker({
+			position: entryPosition,
+			map: map,
+			title: 'Entry'
+            });
+        var marker2Pos = {lat:41.315017, lng: -72.927987};
+        var marker2 = new google.maps.Marker({
+			position: marker2Pos,
+			title: 'Second'
+            });
+            var marker3Pos = {lat: 41.314707, lng: -72.926505};
+            var marker3 = new google.maps.Marker({
+			position: marker3Pos,
+			title: 'Third'
+            });
+            var marker4Pos = {lat: 41.314543, lng: -72.927736};
+            var marker4 = new google.maps.Marker({
+			position: marker4Pos,
+			title: 'Fourth'
+            });
+        marker2.setMap(map);
+        marker3.setMap(map);  
+        marker4.setMap(map); 
+
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDn3JZPmqYtO73Cd4r1b-x1ClNlF0NsXf8&callback=initMap"
+    async defer></script>
+  </body>
+</html>
