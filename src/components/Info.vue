@@ -7,7 +7,5 @@
 <script>
 export default {
   name: 'Info',
-  props: {
-  }
 }
 </script>

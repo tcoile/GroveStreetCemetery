@@ -1,6 +1,6 @@
 <!-- MyMap.vue -->
 <template>
-  <div>
+  <div class="container">
     <h1>Map</h1>
     <map-loader 
       :map-config="mapConfig"

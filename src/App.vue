@@ -1,35 +1,49 @@
 <template>
   <div id="app">
-    <my-map :markers='[
+    <whichMarker/>
+    <my-map v-if="page==0" :markers='[
         {"lat": 41.312735,"lng": -72.926955},
         {"lat":41.315017 ,"lng": -72.927987},
         {"lat":41.314707,"lng": -72.926505},
         {"lat":41.314543,"lng": -72.927736},
       ]'>
     </my-map>
-
-    <Info v-if="pageType"></Info>
-    <p>technically changed</p>
-    <button @click="changePage()">Next</button> 
+    <imageCheck v-if="page==1"></imageCheck>
+    <Info v-if="page==2"></Info>
+    <whichPage/>
   </div>
 </template>
 
 <script>
 import MyMap from './components/MyMap.vue'
+import whichMarker from './components/whichMarker.vue'
+import whichPage from './components/whichPage.vue'
+import imageCheck from './components/imageCheck.vue'
 import Info from './components/Info.vue'
 
 export default {
   name: 'app',
   data: () => ({
-    pageType: 0
   }),
+
   components: {
     MyMap, 
+    whichMarker,
+    whichPage,
+    imageCheck,
     Info
   }, 
+
   methods: {
-    changePage: function() {
-      this.pageType = !this.pageType;
+  },
+
+  computed: {
+    page () {
+      return this.$store.getters.page
+    },
+
+    marker () {
+      return this.$store.getters.marker
     }
   }
 }
