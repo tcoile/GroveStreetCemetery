@@ -14,8 +14,11 @@ export const store = new Vuex.Store({
     incrementPage (state, payload) {
       state.page = (state.page + payload) % 3
     },
+    setPage (state, payload) {
+      state.page = payload
+    },
     incrementMarker (state, payload) {
-      state.marker = (state.marker + payload) % 4
+      state.marker = (state.marker + payload) % 6
     },
     setMarker (state, payload) {
       state.marker = payload
@@ -25,6 +28,9 @@ export const store = new Vuex.Store({
   actions: {
     incrementActionPage ({commit}, payload) {
       commit('incrementPage', payload)
+    },
+    setActionPage ({commit}, payload) {
+      commit('setPage', payload)
     },
     incrementActionMarker ({commit}, payload) {
       commit('incrementMarker', payload)
