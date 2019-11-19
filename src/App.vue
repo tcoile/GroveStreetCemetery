@@ -1,20 +1,26 @@
 <template>
   <div id="app">
     <whichMarker/>
-    <my-map v-if="page==0">
-    </my-map>
-    <imageCheck v-if="page==1"></imageCheck>
-    <Info v-if="page==2"></Info>
-    <whichPage/>
+    <homePage v-if="marker==0"></homePage>
+    <finalPage v-if="marker==5"></finalPage>
+    <div v-if="marker!=0 && marker !=5" id="main">
+      <my-map v-if="page==0">
+      </my-map>
+      <imageCheck v-if="page==1"></imageCheck>
+      <Info v-if="page==2"></Info>
+      <whichPage/>
+    </div>
   </div>
 </template>
 
 <script>
+import homePage from './components/homePage.vue'
 import MyMap from './components/MyMap.vue'
 import whichMarker from './components/whichMarker.vue'
 import whichPage from './components/whichPage.vue'
 import imageCheck from './components/imageCheck.vue'
 import Info from './components/Info.vue'
+import finalPage from './components/finalPage.vue'
 
 export default {
   name: 'app',
@@ -22,11 +28,13 @@ export default {
   }),
 
   components: {
+    homePage,
     MyMap, 
     whichMarker,
     whichPage,
     imageCheck,
-    Info
+    Info,
+    finalPage
   }, 
 
   methods: {
