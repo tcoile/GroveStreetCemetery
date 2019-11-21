@@ -27,6 +27,7 @@ export default {
   data(){
     return {
       markers: [
+        {},
         {"lat": 41.312735,"lng": -72.926955},
         {"lat":41.315017 ,"lng": -72.927987},
         {"lat":41.314543,"lng": -72.927736},
@@ -34,7 +35,7 @@ export default {
       ],
       currMarkers: [],
       mapConfig: {
-        zoom: 18,
+        zoom: 17,
         center: {lat: 41.314001, lng: -72.927009}
         // center: this.markers[0]
       }
