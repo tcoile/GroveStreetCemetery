@@ -1,7 +1,6 @@
 <!-- MyMap.vue -->
 <template>
   <div class="container">
-    <h1>Map</h1>
     <div id="map"></div> 
   </div>
 </template>
@@ -134,7 +133,7 @@ export default {
 
 <style scoped>
 #map {
-  height: 100vh;
+  height: 70vh;
   width: 100%;
 }
 </style>
