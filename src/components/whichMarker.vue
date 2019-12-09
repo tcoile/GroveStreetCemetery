@@ -10,10 +10,10 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
           <b-nav-item @click="setMarker(0)">Home</b-nav-item>
-          <b-nav-item @click="setMarker(1)">Location 1</b-nav-item>
-          <b-nav-item @click="setMarker(2)">Location 2</b-nav-item>
-          <b-nav-item @click="setMarker(3)">Location 3</b-nav-item>
-          <b-nav-item @click="setMarker(4)">Location 4</b-nav-item>
+          <b-nav-item @click="setMarker(1)">Original Plot for People of Color</b-nav-item>
+          <b-nav-item @click="setMarker(2)">North-Westerly Corner Plot</b-nav-item>
+          <b-nav-item @click="setMarker(3)">Sycamore Avenue Plot</b-nav-item>
+          <b-nav-item @click="setMarker(4)">Ivy Path Plot</b-nav-item>
           <b-nav-item @click="setMarker(5)">Conclusion</b-nav-item>
         </b-navbar-nav>
       </b-collapse>

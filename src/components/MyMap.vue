@@ -24,7 +24,7 @@ export default {
       markerTitles: [
         "Original Plot for People of Color",
         "North-Westerly Corner Plot",
-        "Sicamore Avenue Plot",
+        "Sycamore Avenue Plot",
         "Ivy Path Plot",
       ],
       mapConfig: {
