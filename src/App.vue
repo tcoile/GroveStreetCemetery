@@ -4,7 +4,7 @@
     <homePage v-if="marker==0"></homePage>
     <finalPage v-if="marker==5"></finalPage>
     <div v-if="marker!=0 && marker !=5" id="main">
-      <my-map v-if="page==0">
+      <my-map :key="globalMarker" v-if="page==0">
       </my-map>
       <imageCheck v-if="page==1"></imageCheck>
       <Info v-if="page==2"></Info>
@@ -25,6 +25,7 @@ import finalPage from './components/finalPage.vue'
 export default {
   name: 'app',
   data: () => ({
+    globalMarker: this.$store.getters.marker
   }),
 
   components: {
@@ -47,6 +48,11 @@ export default {
 
     marker () {
       return this.$store.getters.marker
+    }
+  },
+  watch: {
+    marker() {
+      this.globalMarker = this.$store.getters.marker;
     }
   }
 }
