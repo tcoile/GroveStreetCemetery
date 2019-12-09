@@ -5,7 +5,9 @@
       <b-card-text>
         Within these gates rest many notable figures of history: Charles Goodwin the inventor of rubber,  Josiah Willard Gibbs “Father of Thermodynamics”, and the forefathers of Yale. But with this history tour, we hope to remember the forgotten residents of New Haven buried within these grounds.
       </b-card-text>
-      <b-btn size="lg" @click="setMarker(1); setPage(0)">Start Tour</b-btn>
+      <b-btn size="lg" @click="setMarker(1); setPage(0)" variant="info">
+        Start Tour
+      </b-btn>
     </b-card>
     
   </div>
@@ -25,4 +27,7 @@
 </script>
 
 <style>
+  #home {
+    height: 80vh;
+  }
 </style>

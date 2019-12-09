@@ -1,14 +1,24 @@
 <template>
-  <div>
-    <b-button-group>
-      <b-btn size="lg" @click="setMarker(0)">Home</b-btn>
-      <b-btn size="lg" @click="setMarker(1)">Marker 1</b-btn>
-      <b-btn size="lg" @click="setMarker(2)">Marker 2</b-btn>
-      <b-btn size="lg" @click="setMarker(3)">Marker 3</b-btn>
-      <b-btn size="lg" @click="setMarker(4)">Marker 4</b-btn>
-      <b-btn size="lg" @click="setMarker(5)">Conclusion</b-btn>
-    </b-button-group>
-    <h2 v-if="marker!=0 && marker!=5" class="p-3">Marker #{{marker}}</h2>
+  <div id="which-marker">
+    <b-navbar toggleable="lg" type="dark" variant="info">
+      <b-navbar-brand v-if="marker != 0 && marker != 5" href="#">Location {{marker}}</b-navbar-brand>
+      <b-navbar-brand v-if="marker == 0" href="#">Home</b-navbar-brand>
+      <b-navbar-brand v-if="marker == 5" href="#">Conclusion</b-navbar-brand>
+
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav>
+          <b-nav-item @click="setMarker(0)">Home</b-nav-item>
+          <b-nav-item @click="setMarker(1)">Location 1</b-nav-item>
+          <b-nav-item @click="setMarker(2)">Location 2</b-nav-item>
+          <b-nav-item @click="setMarker(3)">Location 3</b-nav-item>
+          <b-nav-item @click="setMarker(4)">Location 4</b-nav-item>
+          <b-nav-item @click="setMarker(5)">Conclusion</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+    <br>
   </div>
 </template>
 

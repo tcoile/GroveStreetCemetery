@@ -4,15 +4,16 @@
       <b-card-text >
         By walking this tour, you have followed the history of the forgotten buried in this cemetery. There are still many unanswered questions about how the movement of remains of the people of color plot and the city plot actually occurred. But, hopefully with time we will learn more. Click here for further research and discussion questions. 
       </b-card-text>
-      <b-btn size="lg" @click="showQuestions=true">Questions</b-btn>
+      <b-btn size="lg" @click="showQuestions=true" variant="info">Questions</b-btn>
     </b-card>
     <b-card v-if="showQuestions" title="Questions">
       <b-card-text>
         <b>{{ questions[question].title }}</b>
         <p>{{ questions[question].text }}</p>
       </b-card-text>
-      <b-btn size="lg" @click="question--">Back</b-btn>
-      <b-btn size="lg" @click="question++" v-if="question!=4">Next</b-btn>    
+      <b-btn size="lg" @click="showQuestions=false" v-if="question ==0" variant="info">Back</b-btn>
+      <b-btn size="lg" @click="question--" v-if="question !=0" variant="info">Back</b-btn>
+      <b-btn size="lg" @click="question++" v-if="question!=4" variant="info">Next</b-btn>    
     </b-card> 
   </div>
 </template>
@@ -34,4 +35,7 @@
 </script>
 
 <style>
+  #final {
+    height: 80vh;
+  }
 </style>

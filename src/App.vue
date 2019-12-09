@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <b-container fluid id="app">
     <whichMarker/>
     <homePage v-if="marker==0"></homePage>
     <finalPage v-if="marker==5"></finalPage>
@@ -10,7 +10,7 @@
       <Info v-if="page==2"></Info>
       <whichPage/>
     </div>
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -59,6 +59,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
 </style>
