@@ -27,9 +27,8 @@ export default {
         center: {lat: 41.314001, lng: -72.927009}
       },
       userLocation: null,
-      newMarker: Object,
-      oldMarker: Object, 
       map: null,
+      currentMarker: null,
       userMarker: null,
       previousUserMarker: null,
       userIcon: null
