@@ -133,13 +133,11 @@ export default {
     },
     errorHandler(err) {
       if(err.code == 1) {
-        alert("Error: Access is denied!");
+        alert("Error: Please enable location access!");
       } else if( err.code == 2) {
-        alert("Error: Position is unavailable!");
-      } else if (err.code != 0) {
-        alert("Error: other error has occured");
-      }
-  }
+        alert("Error: Position is currently unavailable!");
+      } 
+    }
   
   }
 }
