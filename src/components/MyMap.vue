@@ -27,8 +27,9 @@ export default {
         center: {lat: 41.314001, lng: -72.927009}
       },
       userLocation: null,
+      newMarker: Object,
+      oldMarker: Object, 
       map: null,
-      currentMarker : Object,
       userMarker: null,
       previousUserMarker: null,
       userIcon: null
@@ -124,6 +125,8 @@ export default {
         alert("Error: Access is denied!");
       } else if( err.code == 2) {
         alert("Error: Position is unavailable!");
+      } else if (err.code != 0) {
+        alert("Error: other error has occured");
       }
   }
   
