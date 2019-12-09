@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// import ChildMarker from './ChildMarker'
 import GoogleMapsApiLoader from 'google-maps-api-loader'
 
 export default {
@@ -21,6 +20,12 @@ export default {
         {"lat":41.315017 ,"lng": -72.927987},
         {"lat":41.314543,"lng": -72.927736},
         {"lat":41.314707,"lng": -72.926505},
+      ],
+      markerTitles: [
+        "Original Plot for People of Color",
+        "North-Westerly Corner Plot",
+        "Sicamore Avenue Plot",
+        "Ivy Path Plot",
       ],
       mapConfig: {
         zoom: 17,
@@ -65,7 +70,14 @@ export default {
           position: this.markers[markerNumber],
           map: this.map,
           title: "Child marker!"
-        })
+      })
+
+      let infoWindow = new this.$store.getters.google.maps.InfoWindow({
+        content: this.markerTitles[markerNumber - 1]
+      });
+      this.$store.getters.google.maps.event.addListener(this.currentMarker, "click", function() {
+        infoWindow.open(this.map, this);
+      });
 
       this.userIcon =  {
         url: 'https://i.imgur.com/Rhaygw3.png',
