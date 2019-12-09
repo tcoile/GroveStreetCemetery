@@ -31,6 +31,8 @@ export default {
       map: null,
       currentMarker : Object,
       userMarker: null,
+      previousUserMarker: null,
+      userIcon: null
     }
   },
   components: {
@@ -57,6 +59,7 @@ export default {
       })
     },
     displayMarker: function(markerNumber) {
+
       //make a new marker for the location!
       const { Marker } = this.$store.getters.google.maps
           this.currentMarker = new Marker({
@@ -64,6 +67,30 @@ export default {
           map: this.map,
           title: "Child marker!"
         })
+
+      this.userIcon =  {
+        url: 'https://i.imgur.com/Rhaygw3.png',
+        scaledSize: new this.$store.getters.google.maps.Size(50, 50), // scaled size
+        origin: new this.$store.getters.google.maps.Point(0,0), // origin
+        anchor: new this.$store.getters.google.maps.Point(0, 0) // anchor
+      };
+
+      if(markerNumber == 1) {
+        this.previousUserMarker = new Marker({
+          position: this.markers[markerNumber],
+          map: this.map,
+          title: "Child marker!",
+          icon: this.userIcon
+        })
+      } else {
+        this.previousUserMarker = new Marker({
+          position: this.markers[markerNumber - 1],
+          map: this.map,
+          title: "Child marker!",
+          icon: this.userIcon
+        })
+      }
+      
     },
     getLocation() {
       if(navigator.geolocation) {
@@ -77,6 +104,7 @@ export default {
       var latitude = position.coords.latitude;
       var longitude = position.coords.longitude;
       this.userLocation = {"lat":latitude, "lng":longitude};
+      this.previousUserMarker.setMap(null);
 
       //get rid of previous marker
       if(this.userMarker) {
@@ -89,6 +117,7 @@ export default {
           position: this.userLocation,
           map: this.map,
           title: "Child marker!",
+          icon: this.userIcon
       })
     },
     errorHandler(err) {
