@@ -1,30 +1,12 @@
 # grove_street
-Look! The final project is [here](https://grove-street-cemetery-tour.herokuapp.com/)! 
+The final project has been deployed [here](https://grove-street-cemetery-tour.herokuapp.com/) -- the application falls asleep after a few minutes, so when first loading the page be prepared to wait a bit. To set up the code on your own computer, follow the instructions below.  
 
 ## Project setup
-```
-npm install
-```
+1. Download this repository. 
+2. Run `npm install` to install all the necessary packages.
+3. Run `npm run serve` to create a development website.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
+### To create a production build
 ```
 npm run build
 ```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
