@@ -1,5 +1,5 @@
 # grove_street
-The final project has been deployed [here](https://grove-street-cemetery-tour.herokuapp.com/) -- the application falls asleep after a few minutes, so when first loading the page be prepared to wait a bit. To set up the code on your own computer, follow the instructions below.  
+The final project has been deployed [here](https://grove-street-cemetery-tour.herokuapp.com/) and is designed for use on a phone -- the application falls asleep after a few minutes, so when first loading the page be prepared to wait a bit. To set up the code on your own computer, follow the instructions below.  
 
 ## Project setup
 1. Download this repository. 
